@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    void sayHello() {
+        cout << "Hello from Student class!" << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.sayHello(); // Output: Hello from Student class!
+    return 0;
+}
