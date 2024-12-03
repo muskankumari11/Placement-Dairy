@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+class Student {
+public:
+    int id;
+    float salary;
+    std::string name;
+};
+
+int main() {
+    Student s1;
+    s1.id = 101;
+    s1.salary = 50000.50f;
+    s1.name = "John Doe";
+
+    std::cout << "Student Details:" << std::endl; // Use std::cout and std::endl
+    std::cout << "ID: " << s1.id << std::endl;
+    std::cout << "Name: " << s1.name << std::endl;
+    std::cout << "Salary: " << s1.salary << std::endl;
+
+    return 0;
+}
