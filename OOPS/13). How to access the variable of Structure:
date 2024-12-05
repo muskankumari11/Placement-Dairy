@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+struct Sample {
+    int id;
+};
+
+int main() {
+    Sample s;
+    s.id = 4;
+    cout << "ID: " << s.id << endl;
+    return 0;
+}
