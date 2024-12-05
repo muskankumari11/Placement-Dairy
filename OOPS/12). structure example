@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+struct StructureName {
+    int member1;
+    float member2;
+};
+
+int main() {
+    StructureName obj;
+    obj.member1 = 10;
+    obj.member2 = 20.5;
+
+    cout << "Member1: " << obj.member1 << endl;
+    cout << "Member2: " << obj.member2 << endl;
+
+    return 0;
+}
