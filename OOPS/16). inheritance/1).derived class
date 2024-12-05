@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+class BaseClass {
+public:
+    int baseData;
+};
+
+class DerivedClass : public BaseClass {
+public:
+    void display() {
+        cout << "Base data: " << baseData << endl;
+    }
+};
+
+int main() {
+    DerivedClass obj;
+    obj.baseData = 10;
+    obj.display();
+    return 0;
+}
