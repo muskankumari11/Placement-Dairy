@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class Sample {
+    int id; // Private data member
+
+public:
+    // Parameterized constructor
+    Sample(int id) {
+        this->id = id;
+        cout << "Parameterized constructor called. ID: " << id << endl;
+    }
+
+    // Copy constructor
+    Sample(Sample &t) {
+        id = t.id;
+        cout << "Copy constructor called. Copied ID: " << id << endl;
+    }
+
+    // Function to display the id
+    void display() {
+        cout << "ID: " << id << endl;
+    }
+};
+
+int main() {
+    Sample obj1(100);  // Parameterized constructor is called
+    obj1.display();
+
+    Sample obj2(obj1); // Copy constructor is called
+    obj2.display();
+
+    return 0;
+}
