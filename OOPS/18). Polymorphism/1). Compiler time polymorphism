@@ -1,0 +1,29 @@
+ #include <iostream>
+using namespace std;
+
+class A {
+    int a;
+public:
+    void display() {
+        cout << "Class A";
+    }
+};
+
+class B : public A {
+    int b;
+public:
+    void display() {
+        cout << "Class B";
+    }
+};
+
+int main() {
+    A objA;
+    B objB;
+
+    objA.display(); // Output: Class A
+    cout << endl;
+    objB.display(); // Output: Class B
+
+    return 0;
+}
