@@ -1,0 +1,28 @@
+In JavaScript, the term "script" can refer to different things depending on the context. Here's a breakdown:
+
+1. HTML <script> Tag
+In web development, the <script> tag is used to embed or reference JavaScript code within an HTML document.
+Inline Script: The JavaScript code is written directly inside the <script> tag.
+<script>
+    console.log("Hello, world!");
+</script>
+External Script: The JavaScript code is in an external file, and the <script> tag links
+to it using the src attribute.
+<script src="app.js"></script>
+
+2. A JavaScript Program or File
+The term "script" can also mean a complete JavaScript program or file. For example:
+A file named app.js that contains JavaScript code is referred to as a script.
+
+3. JavaScript's Execution Context
+In JavaScript, when a file or inline code is executed, it is often referred to as running a "script". In the context of execution:
+Global Scope: Code running in a script is initially in the global scope unless encapsulated in a function or module.
+
+4. Scripts in Node.js or Other Environments
+In Node.js or other JavaScript environments, "script" may refer to a standalone JavaScript file executed as a program:
+node script.js
+
+5. Script as a Concept
+In general programming terms, a script is a small program or
+piece of code that performs a specific task. JavaScript is often
+used for scripting in web development to add interactivity or automate tasks.
