@@ -1,0 +1,24 @@
+In JavaScript, the getElementById() method is a DOM (Document Object Model) method used to retrieve an HTML element by its id attribute.
+This method is one of the most commonly used DOM methods for selecting elements on a webpage.
+sytax is -->
+document.getElementById(id)
+
+Parameters
+id: A string representing the unique id of the HTML element you want to access.
+
+Returns
+The method returns the first element with the specified id. If no element with the given id exists, it returns null.
+
+example --> 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+</body>
+</html>
