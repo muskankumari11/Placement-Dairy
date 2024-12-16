@@ -1,0 +1,203 @@
+CLASS AND OBJECT:
+--> class can pass as a parameter and class can be pass as a return type inside function.
+STATIC ALLOCATION VS DYNAMIC ALLOCATION
+-->STATIC memory ALLOCATION- allocate memory before program starts.eg-> int a=10; , Player harsh;
+->Allocate memory at compile time
+-> use stack memory
+-->Dynamic memory allocation- create while program executing
+->Allocate memory at run time
+->use heap memory->real memory
+->pointer used here.
+->new keyword- In OOP, the new keyword is used to allocate memory dynamically at runtime
+-> eg- Player *urvi=new Player;
+->Arrow functions are a syntactical feature that allows you to write functions in a shorter form compared to traditional function expressions. 
+->this pointer:
+
+In C++, every non-static member function has an implicit pointer called this. This pointer refers to the current object (i.e., the instance of the class) on which the member function is being invoked.
+this allows you to access the members (variables and methods) of the current object.
+
+->this->hp = hp mean?
+this->hp: Refers to the instance variable hp of the current object (accessed through the this pointer).
+hp: Refers to the parameter passed to the constructor or method.
+
+class Character {
+public:
+    int hp;  // Instance variable (member of the class)
+
+    // Constructor
+    Character(int hp) {
+        this->hp = hp;  // Assign the value of the parameter to the member variable
+    }
+};
+
+int main() {
+    Character character1(100);  // Creates an object with hp = 100
+    std::cout << character1.hp;  // Output will be 100
+    return 0;
+}
+
+->Getters and Setters?
+
+Getter: A method that retrieves (or "gets") the value of a private instance variable.
+Setter: A method that sets or updates the value of a private instance variable.
+
+class Person {
+private:
+    int age;  // Private instance variable
+
+public:
+    // Getter method for age
+    int getAge() {
+        return age;
+    }
+
+    // Setter method for age
+    void setAge(int a) {
+        if (a > 0) {  // Only allow valid age
+            age = a;
+        }
+        else {
+            std::cout << "Invalid age!" << std::endl;
+        }
+    }
+};
+
+int main() {
+    Person person;
+    person.setAge(25);  // Setting age using setter
+    std::cout << "Age: " << person.getAge() << std::endl;  // Getting age using getter
+
+    person.setAge(-5);  // Invalid value, age will not be set
+    return 0;
+}
+
+-> Nested Class
+
+In Object-Oriented Programming (OOP), a nested class is a class defined within another class. 
+Types of Nested Classes:
+Static Nested Class: The nested class is defined as static. It does not have access to instance variables or methods of the outer class.
+Non-static (Inner) Nested Class: The nested class is not defined as static. It can access the instance variables and methods of the outer class.
+
+note : in oops when private class then in program should made getter setter.
+
+-->QUESTION -> Create a class "cricketer" that contains name of crickter , his age, number of test matches that he has played and the average runs that he has scored in each test match. create a array of data type crickter to hold records of 20 such crickters and then write a program to read these records.
+
+-> here I wrote program for 2 records in array 
+#include<iostream>
+using namespace std;
+class cricketer{
+    public:
+    char name;
+    int age;
+    int noOfTestMatches;
+    int avarageScore;
+};
+int main(){
+    cricketer aman;
+    aman.name='A';
+    aman.age=32;
+    aman.noOfTestMatches=100;
+    aman.avarageScore=70;
+    
+    cricketer dhoni;
+    dhoni.name='D';
+    dhoni.age=31;
+    dhoni.noOfTestMatches=90;
+    dhoni.avarageScore=60;
+    
+    cricketer arr[2]={aman, dhoni};
+    for(int i=0;i<2;i++){
+        cout<<arr[i].name<<endl;
+        cout<<arr[i].age<<endl;
+        cout<<arr[i].noOfTestMatches<<endl;
+        cout<<arr[i].avarageScore<<endl;
+        
+    }
+}
+->WORKING  STATICALLY HERE
+
+-> NOW FOR DYANMICALLY WORK
+
+#include<iostream>
+#include<vector>  // Required for using vector
+using namespace std;
+
+class Cricketer {
+public:
+    char name;
+    int age;
+    int noOfTestMatches;
+    int averageScore;
+};
+
+int main() {
+    // Create a vector to store pointers to Cricketer objects
+    vector<Cricketer*> arr;
+
+    // Create cricketer objects
+    Cricketer* aman = new Cricketer();
+    aman->name = 'A';
+    aman->age = 32;
+    aman->noOfTestMatches = 100;
+    aman->averageScore = 70;
+
+    Cricketer* dhoni = new Cricketer();
+    dhoni->name = 'D';
+    dhoni->age = 31;
+    dhoni->noOfTestMatches = 90;
+    dhoni->averageScore = 60;
+
+    // Add cricketer pointers to the vector
+    arr.push_back(aman);
+    arr.push_back(dhoni);
+
+    // Adding more cricketers dynamically using pointers
+    char name;
+    int age, noOfTestMatches, averageScore;
+
+    cout << "Enter number of cricketers to add: ";
+    int n;
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Enter details for cricketer " << i + 1 << endl;
+        cout << "Name: ";
+        cin >> name;
+        cout << "Age: ";
+        cin >> age;
+        cout << "Number of Test Matches: ";
+        cin >> noOfTestMatches;
+        cout << "Average Score: ";
+        cin >> averageScore;
+
+        // Dynamically create a Cricketer object using new
+        Cricketer* cricketer = new Cricketer();
+        cricketer->name = name;
+        cricketer->age = age;
+        cricketer->noOfTestMatches = noOfTestMatches;
+        cricketer->averageScore = averageScore;
+
+        // Add the pointer to the vector
+        arr.push_back(cricketer);
+    }
+
+    // Displaying all cricketers' details from the vector
+    cout << "\nCricketer Details:\n";
+    for (int i = 0; i < arr.size(); i++) {
+        cout << "Name: " << arr[i]->name << endl;
+        cout << "Age: " << arr[i]->age << endl;
+        cout << "Number of Test Matches: " << arr[i]->noOfTestMatches << endl;
+        cout << "Average Score: " << arr[i]->averageScore << endl;
+        cout << "-----------------------------\n";
+    }
+
+    // Cleaning up dynamically allocated memory
+    for (int i = 0; i < arr.size(); i++) {
+        delete arr[i];  // Freeing the dynamically allocated memory
+    }
+
+    return 0;
+}
+
+
+
