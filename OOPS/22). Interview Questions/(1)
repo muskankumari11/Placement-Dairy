@@ -1,0 +1,52 @@
+1. Static Memory Allocation in OOP:
+Static Memory Allocation refers to memory that is allocated at compile time, before the program begins execution. 
+This memory is fixed and cannot be changed during runtime. In the context of OOP, static memory is typically used for:
+
+Class-level variables: Variables that belong to the class and not to any particular instance of the class.
+Global variables: Variables that are declared outside any function or class and are available throughout the program.
+Static variables: Variables declared using the static keyword inside a class or function that retain their value between function calls or across instances of a class.
+
+class MyClass {
+public:
+    static int count;  // Static variable shared by all instances of MyClass
+    MyClass() {
+        count++;
+    }
+};
+
+int MyClass::count = 0; // Static variable initialization
+
+int main() {
+    MyClass obj1, obj2;
+    std::cout << "Count: " << MyClass::count; // Output will be 2
+}
+
+2. Dynamic Memory Allocation in OOP:
+Dynamic Memory Allocation refers to memory that is allocated during runtime as needed. This type of memory allocation
+allows the program to request memory as objects or data structures are created and freed when no longer required. It is used primarily
+for managing memory for objects whose size or lifetime may vary.
+
+In OOP, dynamic memory is typically used for:
+
+Objects created with new or malloc (in C++): Memory for objects is allocated dynamically during runtime.
+Data structures like arrays or linked lists: When the size of the data structure cannot be determined beforehand, dynamic memory allocation is used.
+Memory for polymorphism: When a base class pointer refers to a derived class object, dynamic memory management is required to store the object on the heap.
+
+class MyClass {
+public:
+    int *data;
+    
+    MyClass(int val) {
+        data = new int(val);  // Dynamically allocating memory
+    }
+    
+    ~MyClass() {
+        delete data;  // Free the dynamically allocated memory
+    }
+};
+
+int main() {
+    MyClass* obj = new MyClass(10);  // Creating object dynamically
+    std::cout << *obj->data;  // Output will be 10
+    delete obj;  // Free the dynamically allocated object
+}
