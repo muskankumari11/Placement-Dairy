@@ -28,3 +28,27 @@ int main(){
     }
     cout << endl; 
 }
+
+//2nd method->using constructor here
+
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int val;
+    Node*next;
+    //using constructor
+    Node(int val){
+    this->val=val;
+    }
+};
+int main(){
+    Node a(10);
+    Node b(20);
+    Node c(30);
+    Node d(40);
+    //forming ll
+    a.next=&b;
+    b.next=&c;
+    c.next=&d;
+}
