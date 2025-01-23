@@ -29,9 +29,9 @@ int size(Node*head){
     return n;
 }
 void displayrec(Node * head){
-    if(head==NULL) return;
-    cout<<head->val<<" ";
-    displayrec(head->next);
+    if(head==NULL) return;  //base case
+    cout<<head->val<<" ";   //kaam
+    displayrec(head->next); //call
 }
 int main(){
     Node* a=new Node(10);
