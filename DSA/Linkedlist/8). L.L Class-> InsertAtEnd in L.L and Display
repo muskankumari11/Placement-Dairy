@@ -59,3 +59,10 @@ int main(){
     ll.display();
     cout << ll.getSize() << endl;  // Use getter method
 }
+
+
+//output-> 
+10 
+1
+10 20 
+2
