@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int intNum = 5;
+    double doubleNum = intNum;  // Implicit conversion from int to double
+    
+    cout << "Integer: " << intNum << endl;
+    cout << "Double: " << doubleNum << endl;
+    
+    return 0;
+}
