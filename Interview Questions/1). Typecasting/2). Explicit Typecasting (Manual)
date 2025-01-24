@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double doubleNum = 9.87;
+    int intNum = (int) doubleNum;  // Explicit conversion from double to int
+    
+    cout << "Double: " << doubleNum << endl;
+    cout << "Integer after typecasting: " << intNum << endl;
+    
+    return 0;
+}
