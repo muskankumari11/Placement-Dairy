@@ -1,0 +1,15 @@
+// write a function to take the radius of a circle as an argument and return its area
+#include<iostream>
+using namespace std;
+float pi=3.14;
+void area(int r){
+    
+    cout<<"area is"<<(pi)*r*r;
+}
+
+int main(){
+    int r;
+    cout<<"enter r:";
+    cin>>r;
+    area(r);
+}
