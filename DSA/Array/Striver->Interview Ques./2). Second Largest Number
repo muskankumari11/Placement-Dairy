@@ -35,3 +35,7 @@ vector<int> getSecondOrderElements(int n, vector<int> a) {
     int ssmallest = secondSmallest(a, n);
     return {slargest, ssmallest};
 }
+
+//Time Complexity: O(N), Single-pass solution
+
+//Space Complexity: O(1)
