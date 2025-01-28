@@ -23,6 +23,10 @@ int main() {
   }
 }
 
+//yaha pe k ho jayega 3 int main() wale me
+//output-> The array after removing duplicate elements is 
+1 2 3 
+
 //code -optimal soln in site (short cut)
 int removeDuplicates(vector<int> &arr, int n) {
     // Write your code here.
@@ -35,6 +39,8 @@ int removeDuplicates(vector<int> &arr, int n) {
     }
     return i + 1;  
 }
+
+//o/p-> 3
 
 //Time Complexity: O(N)
 
