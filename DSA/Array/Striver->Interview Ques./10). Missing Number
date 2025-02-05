@@ -1,0 +1,45 @@
+//optimal approach
+int missingNumber(vector<int>&a, int N) {
+    int sum1=((N*(N+1))/2);
+    int sum2=0;
+    for(int i=0;i<N-1;i++){
+        sum2+=a[i];
+    }
+    int missingnum=sum1-sum2;
+    return missingnum;
+    // Write your code here.
+}
+
+//Time Complexity: O(N), where N = size of array+1.
+Reason: Here, we need only 1 loop to get the sum of the array elements. The loop runs for approx. N times. So, the time complexity is O(N).
+
+//Space Complexity: O(1) as we are not using any extra space.
+
+//full->code
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int missingNumber(vector<int>&a, int N) {
+
+    //Summation of first N numbers:
+    int sum = (N * (N + 1)) / 2;
+
+    //Summation of all array elements:
+    int s2 = 0;
+    for (int i = 0; i < N - 1; i++) {
+        s2 += a[i];
+    }
+
+    int missingNum = sum - s2;
+    return missingNum;
+}
+
+int main()
+{
+    int N = 5;
+    vector<int> a = {1, 2, 4, 5};
+    int ans = missingNumber(a, N);
+    cout << "The missing number is: " << ans << endl;
+    return 0;
+}
