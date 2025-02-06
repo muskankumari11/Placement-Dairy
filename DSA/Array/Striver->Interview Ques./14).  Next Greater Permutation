@@ -1,0 +1,16 @@
+//better soln 
+//here next_permutation -> its stl which is inbuilt used to find next permutataion.
+vector<int> nextGreaterPermutation(vector<int> &A) {
+    // Write your code here.
+   bool result= next_permutation(A.begin(), A.end());
+   return A;
+}
+
+//leetcode-> Next Permutation
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        next_permutation(nums.begin(), nums.end());
+    }
+};
