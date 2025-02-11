@@ -1,0 +1,58 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        
+        // Move fast pointer n steps ahead
+        for (int i = 1; i <= n; i++) {
+            if (fast == NULL) return head;  // If n is greater than the length of the list
+            fast = fast->next;
+        }
+        
+        // Special case: If removing the first node (when fast reaches the end)
+        if (fast == NULL) return head->next;
+        
+        // Move both slow and fast pointers until fast reaches the end
+        while (fast->next != NULL) {
+            slow = slow->next;
+            fast = fast->next;
+        }
+        
+        // Remove the N-th node from the end
+        slow->next = slow->next->next;
+        
+        return head;
+    }
+};
