@@ -1,0 +1,30 @@
+class Solution {
+  public:
+    void printGfg(int N) {
+        if(N==0)
+        return;
+        printGfg(N-1);
+        cout<<"GFG"<<" ";
+        // Code here
+    }
+};
+
+//full code 
+#include<iostream>
+using namespace std;
+class Solution{
+public:
+void printGfg(int N){
+    if(N==0)
+    return;
+    printGfg(N-1);
+    cout<<"GFG"<<" ";
+}
+};
+int main(){
+    Solution obj;
+    int n;
+    cout<<"enter size";
+    cin>>n;
+    obj.printGfg(n);
+}
