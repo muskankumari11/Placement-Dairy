@@ -1,0 +1,35 @@
+class Solution {
+  public:
+    // Complete this function
+    void printNos(int n) {
+        if(n==0)
+        return;
+        printNos(n-1);
+        cout<<n<<" ";
+        // Your code here
+    }
+};
+
+//full code 
+
+#include <iostream>
+using namespace std;
+
+class Solution {
+  public:
+    void printNos(int n) {
+        if (n == 0) return;  
+        printNos(n - 1);    
+        cout << n << " ";   
+    }
+};
+
+int main() {
+    Solution obj;
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    obj.printNos(n);
+    cout << endl;
+    return 0;
+}
