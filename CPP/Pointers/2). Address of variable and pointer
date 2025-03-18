@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // int x=4;
+    // int* p=&x; //int* is a data type 
+    // cout<<p;
+    // cout<<endl;
+    // cout<<&x;
+    // cout<<endl;
+    
+    // float x=4.5;
+    // float* p=&x; //float* is a data type 
+    // cout<<p;
+    // cout<<endl;
+    // cout<<&x;
+    
+    // bool x=true;
+    // bool* p=&x; //bool* is a data type 
+    // cout<<p;
+    // cout<<endl;
+    // cout<<&x;
+    
+    char x='z';
+    char* p=&x; //char* is a data type 
+    cout<<p;
+    cout<<endl;
+    cout<<&x;
+}
