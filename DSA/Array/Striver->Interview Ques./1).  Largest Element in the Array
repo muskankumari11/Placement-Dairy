@@ -24,4 +24,32 @@ class Solution {
     }
 };
 
+
+//full code
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int largeElement(vector<int>& arr, int n) {  // Return int instead of vector<int>
+        int largest = arr[0];  // Initialize largest outside the loop
+        for (int i = 1; i < n; i++) {  // Start loop from index 1
+            if (largest < arr[i]) {
+                largest = arr[i];
+            }
+        }
+        return largest;  // Return the largest element
+    }
+};
+
+int main() {
+    vector<int> arr = {1, 4, 100, 5};
+    int n = arr.size();  // Get the size of array
+    Solution obj;
+    int ans = obj.largeElement(arr, n);  // Pass both parameters
+    cout << "Largest element: " << ans << endl;
+    return 0;
+}
+
 //tc-> o(n)
