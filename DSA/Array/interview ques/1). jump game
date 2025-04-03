@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    bool jumpnum(vector<int>& nums) {
+        int n = nums.size();
+        int maxindex = 0;
+        for (int i = 0; i < n; i++) {
+            if (i > maxindex) 
+                return false;  // If we reach an index beyond max reachable, return false
+            maxindex = max(maxindex, i + nums[i]);  // Update max reachable index
+        }
+        return true;  // If we finish the loop, we can reach the last index
+    }
+};
+
+int main() {
+    Solution sol;
+    vector<int> nums = {2, 3, 1, 1, 4};  // ✅ Fixed extra comma issue
+
+    // Call the function and print the result
+    bool result = sol.jumpnum(nums);
+    cout << (result ? "true" : "false") << endl;  // ✅ Print correct boolean output
+
+    return 0;  // ✅ Return 0 for proper program execution
+}
