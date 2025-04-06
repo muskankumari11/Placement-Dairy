@@ -1,0 +1,87 @@
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        vector<int> ans(2, -1); // initialize with -1, meaning not found
+
+        int n = nums.size();
+        int lo = 0, hi = n - 1;
+
+        // First occurrence
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (nums[mid] < target) {
+                lo = mid + 1;
+            } else {
+                hi = mid - 1;
+            }
+            if (nums[mid] == target) ans[0] = mid;
+        }
+
+        lo = 0, hi = n - 1;
+
+        // Last occurrence
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (nums[mid] > target) {
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+            if (nums[mid] == target) ans[1] = mid;
+        }
+
+        return ans;
+    }
+};
+
+//tc->o(logn)
+
+//full code 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        vector<int> ans(2, -1); // initialize with -1, meaning not found
+        int n = nums.size();
+        int lo = 0, hi = n - 1;
+
+        // First occurrence
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (nums[mid] < target) {
+                lo = mid + 1;
+            } else {
+                hi = mid - 1;
+            }
+            if (nums[mid] == target) ans[0] = mid;
+        }
+
+        lo = 0, hi = n - 1;
+
+        // Last occurrence
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (nums[mid] > target) {
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+            if (nums[mid] == target) ans[1] = mid;
+        }
+
+        return ans;
+    }
+};
+
+int main() {
+    Solution sol;
+    vector<int> nums = {5, 7, 7, 8, 8, 10};
+    int target = 8;
+    vector<int> result = sol.searchRange(nums, target);
+
+    cout << "[" << result[0] << ", " << result[1] << "]" << endl;
+    return 0;
+}
