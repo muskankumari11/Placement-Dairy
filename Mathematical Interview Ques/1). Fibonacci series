@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter the number of terms: ";
+    cin >> num;
+
+    if (num <= 0) {
+        cout << "Please enter a positive integer." << endl;
+        return 1;
+    }
+
+    int a = 0, b = 1;
+
+    cout << "Fibonacci Series: ";
+
+    for (int i = 0; i < num; ++i) {
+        cout << a;
+        if (i < num - 1) {
+            cout << ", ";
+        }
+        int nextTerm = a + b;
+        a = b;
+        b = nextTerm;
+    }
+
+    cout << endl;
+    return 0;
+}
