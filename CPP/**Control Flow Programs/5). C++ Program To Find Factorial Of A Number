@@ -1,0 +1,42 @@
+(1). Recursive approach
+
+#include<iostream>
+using namespace std;
+int factorial(int n){
+    if(n==0){
+        return 1;
+    }
+    else{
+        return n*factorial(n-1);
+    }
+}
+int main(){
+    int n=4;
+    cout<<"factorial of"<<" "<<n<<" "<<"is"<<" "<<factorial(n);
+    
+    return 0;
+}
+
+(2). Iterative Approach
+
+#include <iostream>
+using namespace std;
+ 
+// Function to find factorial of
+// given number
+unsigned int factorial(unsigned int n)
+{
+    int res = 1, i;
+    for (i = 2; i <= n; i++)
+        res *= i;
+    return res;
+}
+ 
+// Driver code
+int main()
+{
+    int num = 5;
+    cout << "Factorial of " << num << " is "
+         << factorial(num) << endl;
+    return 0;
+}
