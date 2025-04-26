@@ -16,3 +16,30 @@ public:
         return res;
     }
 };
+
+//tc-> O(n)-> best because arrays are faster than maps.
+
+
+//2nd method ->using map
+
+class Solution {
+public:
+    int minSteps(string s, string t) {
+        unordered_map<char, int>mp_s;
+        unordered_map<char, int>mp_t;
+        for(auto &ch:s){
+            mp_s[ch]++;
+        }
+        for(auto &ch:t){
+            mp_t[ch]++;
+        }
+        int res=0;
+        for(char ch='a'; ch<='z';++ch){
+            if(mp_s[ch]>mp_t[ch])
+            res+=mp_s[ch]-mp_t[ch];
+        }
+        return res;
+    }
+};
+
+//time complexity->O(m+n)
