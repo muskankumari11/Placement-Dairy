@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int primecheck(int n) {
+    int cnt = 0;
+
+    if (n <= 1) {
+        cout << n << " is NOT a prime number" << endl;
+    } else {
+        // Check divisibility from 1 to n
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                cnt++;
+            }
+        }
+
+        if (cnt > 2) {
+            cout << n << " is NOT a prime number" << endl;
+        } else {
+            cout << n << " is a prime number" << endl;
+        }
+    }
+
+    return 0; 
+}
+
+int main() {
+    int n = 30;
+    primecheck(n); 
+    return 0;
+}
+t.c->o(n)
