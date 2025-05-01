@@ -1,0 +1,27 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    stack<int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+
+    // Use extra stack to reverse
+    stack<int> temp;
+    while (!st.empty()) {
+        temp.push(st.top());
+        st.pop();
+    }
+
+    // Now print in normal order
+    while (!temp.empty()) {
+        cout << temp.top() << " ";
+        temp.pop();
+    }
+
+    return 0;
+}
