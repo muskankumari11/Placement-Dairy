@@ -1,0 +1,9 @@
+
+class Main{
+    public static void main(String[] args){
+        //string-> functions
+        //charAt
+        String name="aman";
+        System.out.println(name.charAt(3));
+    }
+}
