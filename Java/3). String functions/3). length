@@ -1,0 +1,9 @@
+
+class Main{
+    public static void main(String[] args){
+        //string-> functions
+        //length
+        String name="aman";
+        System.out.println(name.length());
+    }
+}
