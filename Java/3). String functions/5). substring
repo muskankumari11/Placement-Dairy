@@ -1,0 +1,9 @@
+
+class Main{
+    public static void main(String[] args){
+        //string-> functions
+        //substring
+        String name="Aman and Naman";
+        System.out.println(name.substring(5,9));
+    }
+}
