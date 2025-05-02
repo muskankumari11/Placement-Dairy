@@ -1,0 +1,11 @@
+
+class Main{
+    public static void main(String[] args){
+        //string-> functions
+        //concatenate
+        String name1="aman";
+        String name2="naman";
+        String name3=name1+" and "+name2;
+        System.out.println(name3);
+    }
+}
