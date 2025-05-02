@@ -6,5 +6,7 @@ class Main{
         String name="aman";
         String name2=name.replace('m','a');
         System.out.println(name2);
+        System.out.println(name);  //aman
+        //note-> string is immutable: ham ekbar string bana diye usko chnge nahi kar sakte agar change karna hai to ek nayi string banana parega.
     }
 }
