@@ -1,0 +1,10 @@
+
+class Main{
+    public static void main(String[] args){
+        //string-> functions
+        //replace
+        String name="aman";
+        String name2=name.replace('m','a');
+        System.out.println(name2);
+    }
+}
