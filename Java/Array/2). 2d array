@@ -1,0 +1,10 @@
+// import java.util.Arrays;
+class Main {
+    public static void main(String[] args) {
+        
+       int [] marks={90,55,98};
+       int [][] finalmarks={{99,98,97}, {98,90,87}};
+       System.out.println(finalmarks[1][1]);
+        
+    }
+}
