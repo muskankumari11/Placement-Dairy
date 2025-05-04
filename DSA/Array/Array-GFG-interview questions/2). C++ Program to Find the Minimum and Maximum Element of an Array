@@ -1,8 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void maxminelement(const vector<int>& arr) {
-    if (arr.empty()) {
+void maxMinElement(int arr[], int n) {
+    if (n == 0) {
         cout << "Array is empty." << endl;
         return;
     }
@@ -10,13 +10,11 @@ void maxminelement(const vector<int>& arr) {
     int minVal = arr[0];
     int maxVal = arr[0];
 
-    for (int i = 1; i < arr.size(); i++) {
-        if (arr[i] < minVal) {
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < minVal)
             minVal = arr[i];
-        }
-        if (arr[i] > maxVal) {
+        if (arr[i] > maxVal)
             maxVal = arr[i];
-        }
     }
 
     cout << "Min element is: " << minVal << endl;
@@ -24,10 +22,14 @@ void maxminelement(const vector<int>& arr) {
 }
 
 int main() {
-    vector<int> arr = {4, 2, 5, 6};
-    maxminelement(arr);
+    int arr[] = {4, 2, 5, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    maxMinElement(arr, n);
+
     return 0;
 }
+
 
 //tc->o(n)
 //sc->o(1)
