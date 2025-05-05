@@ -1,0 +1,9 @@
+public class Main {
+    public static void main(String[] args) {
+        // Constants
+        int age = 33;
+        age = 55;  // This is allowed
+
+        final float pi = 3.14f;  // This is a constant
+    }
+}
