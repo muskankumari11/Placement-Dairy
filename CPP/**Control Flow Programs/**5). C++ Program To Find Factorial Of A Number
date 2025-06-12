@@ -40,3 +40,26 @@ int main()
          << factorial(num) << endl;
     return 0;
 }
+
+//iterative-approach
+
+//factorial of a number without using recursion, its iterative approach
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    unsigned long long factorial=1;
+    cout<<"enter a number";
+    cin>>n;
+    if(n<0){
+        cout<<"negative number factorial can not be find";
+    }
+    else{
+        for(int i=1;i<=n;i++){
+            factorial*=i;
+        }
+        cout<<"factorial of number "<<n << " is "<<factorial;
+    }
+    return 0;
+}
