@@ -13,3 +13,21 @@ int main(){
     cout<<"reverse of number"<<" "<<n<<" "<<"is"<<ReverseNum(n);
     return 0;
 }
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter a number";
+    cin>>n;
+    int ans=0;
+    while(n>0){
+        ans=ans*10+n%10;
+        n=n/10;
+    }
+    cout<<"ans is"<<" "<<ans;
+}
+
+//tc->	O(log n)
+//sc->O(1)
