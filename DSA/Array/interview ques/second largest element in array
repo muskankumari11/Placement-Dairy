@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int checkslar(vector<int>&arr, int n) {
+    int largest=-1;
+    int slargest=-1;
+    for(int i=0;i<arr.size();i++){
+        if(arr[i]>largest){
+            slargest=largest;
+            largest=arr[i];
+        }
+        else if(arr[i]<largest && arr[i]>slargest){
+            slargest=arr[i];
+        }
+    }
+    return slargest;
+}
+    int main() {
+        vector<int>arr={10,20,15};
+        int n=arr.size();
+    int ans=checkslar(arr,n);
+    cout<<ans;
+}
